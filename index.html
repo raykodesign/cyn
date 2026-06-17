@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyns - XatSpace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=VT323&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="innovative-bg">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="video/background.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div id="enter-screen">
+        <button id="enter-btn">
+            <i class="fa-solid fa-heart"></i> Ingresar
+        </button>
+    </div>
+
+    <main id="main-layout" class="hidden-layout">
+        
+        <span class="border-line line-top"></span>
+        <span class="border-line line-right"></span>
+        <span class="border-line line-bottom"></span>
+        <span class="border-line line-left"></span>
+
+        <aside class="sidebar-gold">
+            <div class="profile-center-glow">
+                <img src="https://xatimg.com/image/bVCESxtYepVa.jpg" alt="Profile" class="pfp-pink">
+            </div>
+            
+            <div class="name-container">
+                <h1 class="cursive-name">Cyns</h1>
+            </div>
+            <span class="uid-gold">ID: 784431383</span>
+
+            <nav class="nav-menu">
+                <button class="nav-btn-gold" onclick="openModal('modal-profile')">
+                    <i class="fa-solid fa-user"></i> Profile
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-gallery')">
+                    <i class="fa-solid fa-images"></i> Gallery 
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-friends')">
+                    <i class="fa-solid fa-user-group"></i> Friends
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-music')">
+                    <i class="fa-solid fa-music"></i> Music
+                </button>
+            </nav>
+        </aside>
+
+        <section class="content-area-gold">
+            <div class="welcome-message">
+                <h2 class="center-title-fem">Cyns</h2>
+                <div class="text-wrapper">
+                    <p id="typing-text"></p><span class="cursor">_</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-profile" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-profile')">&times;</span>
+            <h3>PROFILE</h3>
+            <div class="profile-details">
+                <p style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--pink-neon);">มันก็แค่วันที่แย่ ไม่ได้หมายความว่าชีวิตแย่ 𐙚 ̊</p>
+                <br>
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-gallery" class="modal">
+        <div class="modal-content gold-border gallery-modal-size">
+            <span class="close-btn" onclick="closeModal('modal-gallery')">&times;</span>
+            <h3>GALLERY</h3>
+            <div class="gallery-wrapper">
+                <div class="gallery-container-3d">
+                    <div class="photo-carousel-3d" id="carousel-3d-track"></div>
+                </div>
+                <button class="nav-arrow-gold prev-3d" onclick="moveGallery(-1)">‹</button>
+                <button class="nav-arrow-gold next-3d" onclick="moveGallery(1)">›</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-friends" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-friends')">&times;</span>
+            <h3>FRIENDS</h3>
+             <div class="friend-list-gold">
+                <div class="friend-item-gold">
+                    <img src="https://xatimg.com/image/19MLHb5t978A.jpg" alt="Kert" class="friend-pfp">
+                    <span>Kert</span> <small>Online</small>
+                </div>
+                <div class="friend-item-gold">
+                    <img src="https://xatimg.com/image/dND9N4ts6gqp.jpg" alt="Queen" class="friend-pfp">
+                    <span>Queen</span> <small>Online</small>
+                </div>
+                <div class="friend-item-gold">
+                    <img src="https://xatimg.com/image/dND9N4ts6gqp.jpg" alt="Froyz" class="friend-pfp">
+                    <span>Froyz</span> <small>Online</small>
+                </div>
+                <div class="friend-item-gold">
+                    <img src="https://xatimg.com/image/dND9N4ts6gqp.jpg" alt="Aom" class="friend-pfp">
+                    <span>Aom</span> <small>Online</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-music" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-music')">&times;</span>
+            <h3>MUSIC</h3>
+             <div class="music-player-gold">
+                <div class="vinyl-record-gold" id="vinyl">
+                    <i class="fas fa-compact-disc"></i>
+                </div>
+                <div class="song-info-gold">
+                    <h4 id="song-title">Select Track</h4>
+                    <p id="song-artist">...</p>
+                    <div class="controls-gold">
+                        <button onclick="prevSong()"><i class="fas fa-backward"></i></button>
+                        <button onclick="togglePlay()"><i class="fas fa-play" id="play-icon"></i></button>
+                        <button onclick="nextSong()"><i class="fas fa-forward"></i></button>
+                    </div>
+                    <div class="fake-bar-gold"><div class="fill-gold" id="progress-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" loop></audio>
+
+    <div class="watermark-ghost">
+        <a href="https://xat.me/Rayy" target="_blank">Rayko Design</a>
+        <span>© Derechos Reservados 2026</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
