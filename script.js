@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- GALERÍA 3D NUEVAS FOTOS ---
     const galleryImages = [
-        "https://xatimg.com/image/u4994TVDa96D.jpg",
+        "https://xatimg.com/image/d0W83fOM9pw4.jpg",
         "https://xatimg.com/image/e3gY1sqCo4sz.jpg",
         "https://xatimg.com/image/YbBKzI0qGdC0.jpg",
         "https://xatimg.com/image/7rRApMnsEpv1.jpg"
